@@ -1,0 +1,11 @@
+<%- include('partials/head') %>
+<div class="shell">
+  <%- include('partials/header') %>
+  <main class="error-page">
+    <div class="error-code"><span>✦</span><%= status %></div>
+    <h1>Có vẻ bạn đã đi<br><em>chệch một nhịp.</em></h1>
+    <p><%= message %></p>
+    <a class="button button--coral" href="/">Về trang chủ <span>→</span></a>
+  </main>
+  <%- include('partials/footer') %>
+</div>

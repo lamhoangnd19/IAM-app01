@@ -1,0 +1,30 @@
+<%- include('partials/head') %>
+<div class="shell shell--auth">
+  <%- include('partials/header') %>
+  <main class="auth-page">
+    <section class="auth-intro">
+      <a class="back-link" href="/">← Trở về trang chủ</a>
+      <div class="auth-intro__content reveal">
+        <span class="kicker">Chào mừng trở lại</span>
+        <h1>Tiếp tục nhịp<br><em>tiến bộ.</em></h1>
+        <p>Mỗi lần bạn quay lại là một lần bạn chọn phiên bản tốt hơn của chính mình.</p>
+        <div class="auth-quote"><span>“</span><p>Thành công là tổng của những nỗ lực nhỏ, được lặp lại ngày qua ngày.</p><small>— Robert Collier</small></div>
+      </div>
+      <div class="auth-shape auth-shape--one"></div><div class="auth-shape auth-shape--two"></div>
+    </section>
+    <section class="auth-form-wrap">
+      <form class="auth-form reveal reveal--delay" method="post" action="/login" novalidate>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div class="form-heading"><span class="form-icon">↗</span><h2>Đăng nhập</h2><p>Nhập thông tin để trở lại hành trình của bạn.</p></div>
+        <% if (error) { %><div class="alert alert--error" role="alert"><span>!</span><%= error %></div><% } %>
+        <label class="field"><span>Tên đăng nhập</span><div class="input-wrap"><span class="input-icon">@</span><input type="text" name="username" value="<%= form.username || '' %>" placeholder="vi_du: minhanh" autocomplete="username" required autofocus></div></label>
+        <label class="field"><span>Mật khẩu</span><div class="input-wrap"><span class="input-icon">⌑</span><input id="password" type="password" name="password" placeholder="Nhập mật khẩu" autocomplete="current-password" required><button class="password-toggle" type="button" data-target="password" aria-label="Hiện mật khẩu">◉</button></div></label>
+        <div class="form-meta"><label class="check"><input type="checkbox" name="remember"><span></span> Ghi nhớ tôi</label><span class="muted-link">Mật khẩu tối thiểu 8 ký tự</span></div>
+        <button class="button button--coral button--full" type="submit">Đăng nhập <span>→</span></button>
+        <p class="auth-switch">Chưa có tài khoản? <a href="/register">Bắt đầu miễn phí</a></p>
+      </form>
+    </section>
+  </main>
+</div>
+<script src="/js/main.js" defer></script>
+</body></html>

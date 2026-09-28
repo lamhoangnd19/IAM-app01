@@ -1,0 +1,30 @@
+IF DB_ID(N'MomentumDB') IS NULL
+BEGIN
+  CREATE DATABASE MomentumDB;
+END
+GO
+
+USE MomentumDB;
+GO
+
+IF OBJECT_ID(N'dbo.Users', N'U') IS NULL
+BEGIN
+  CREATE TABLE dbo.Users (
+    Id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    Username NVARCHAR(50) NOT NULL UNIQUE,
+    PasswordHash NVARCHAR(255) NOT NULL,
+    CreatedAt DATETIME2 NOT NULL CONSTRAINT DF_Users_CreatedAt DEFAULT SYSUTCDATETIME()
+  );
+END
+GO
+
+IF OBJECT_ID(N'dbo.Sessions', N'U') IS NULL
+BEGIN
+  CREATE TABLE dbo.Sessions (
+    SessionId NVARCHAR(128) NOT NULL PRIMARY KEY,
+    SessionData NVARCHAR(MAX) NOT NULL,
+    ExpiresAt DATETIME2 NOT NULL
+  );
+  CREATE INDEX IX_Sessions_ExpiresAt ON dbo.Sessions (ExpiresAt);
+END
+GO

@@ -1,0 +1,79 @@
+<%- include('partials/head') %>
+<div class="shell">
+  <%- include('partials/header') %>
+
+  <main>
+    <section class="hero">
+      <div class="hero__copy reveal">
+        <div class="eyebrow"><span></span> Phiên bản tốt hơn bắt đầu từ hôm nay</div>
+        <h1>Tiến bộ không cần<br><em>ồn ào.</em></h1>
+        <p class="hero__lead">Chọn một điều nhỏ. Lặp lại mỗi ngày. Momentum giúp bạn biến những ý định tốt thành nhịp sống bền vững.</p>
+        <div class="hero__actions">
+          <a class="button button--coral" href="/register">Bắt đầu hành trình <span>→</span></a>
+          <a class="watch-link" href="#phuong-phap"><span class="play">▶</span> Khám phá cách hoạt động</a>
+        </div>
+        <div class="social-proof">
+          <div class="avatar-stack" aria-hidden="true">
+            <span class="avatar avatar--1">L</span><span class="avatar avatar--2">M</span><span class="avatar avatar--3">A</span><span class="avatar avatar--4">+</span>
+          </div>
+          <div><strong>2.400+ người</strong><br><span>đang tốt hơn mỗi ngày</span></div>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal reveal--delay" aria-label="Minh họa hành trình phát triển">
+        <div class="sun-orbit"></div>
+        <div class="quote-card"><span>“</span>Động lực đưa bạn bắt đầu.<br><strong>Thói quen đưa bạn đi xa.</strong></div>
+        <div class="streak-card">
+          <span class="streak-card__icon">✦</span>
+          <div><strong>12 ngày</strong><small>Chuỗi hiện tại</small></div>
+          <div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <svg class="landscape" viewBox="0 0 670 590" role="img" aria-label="Người đang đi lên trên con đường giữa thiên nhiên">
+          <defs>
+            <linearGradient id="hillBack" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#bbd6c8"/><stop offset="1" stop-color="#84ad9b"/></linearGradient>
+            <linearGradient id="hillFront" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#3e786c"/><stop offset="1" stop-color="#1d5048"/></linearGradient>
+            <linearGradient id="path" x1=".2" y1="0" x2=".8" y2="1"><stop stop-color="#f3c6a5"/><stop offset="1" stop-color="#f7e6cf"/></linearGradient>
+          </defs>
+          <circle cx="490" cy="106" r="58" fill="#f7c96c" opacity=".95"/>
+          <path d="M46 334C144 236 224 267 302 199c69-59 166-70 325 60v331H46V334Z" fill="url(#hillBack)"/>
+          <path d="M-35 435c130-78 211-51 303-12 92 39 168-65 236-95 72-32 139 18 202 72v190H-35V435Z" fill="url(#hillFront)"/>
+          <path d="M271 590c55-86 142-116 144-182 1-35-24-56-54-80-21-16-25-48 1-79 15-19 40-36 67-50 15-8 34 3 25 12-42 39-56 70-38 91 21 25 63 42 81 80 35 72-51 129-76 208H271Z" fill="url(#path)"/>
+          <g class="walker">
+            <circle cx="416" cy="319" r="12" fill="#ecb28e"/>
+            <path d="m406 335 20-2 13 52-25 4-8-54Z" fill="#e66f58"/>
+            <path d="m413 387-15 55" stroke="#183f3a" stroke-width="10" stroke-linecap="round"/>
+            <path d="m430 385 28 48" stroke="#183f3a" stroke-width="10" stroke-linecap="round"/>
+            <path d="m408 345-28 27M427 344l27 23" stroke="#d99875" stroke-width="8" stroke-linecap="round"/>
+            <path d="M406 331c3-16 25-19 27 1-11-7-17-6-27-1Z" fill="#233d39"/>
+            <path d="m396 442-10 4M458 433l10 4" stroke="#f7e4ce" stroke-width="8" stroke-linecap="round"/>
+          </g>
+          <g fill="#e78568">
+            <path d="M104 477c-19-42 10-64 35-51 23 12 13 48-35 51Z"/><path d="M137 478c7-42 40-48 54-24 13 22-10 46-54 24Z"/>
+          </g>
+          <g stroke="#e78568" stroke-width="5" stroke-linecap="round"><path d="m120 488-14-44M126 487l24-42M545 388l-2-56M551 388l30-42"/></g>
+          <g fill="#d5e4d1"><circle cx="91" cy="396" r="5"/><circle cx="116" cy="375" r="4"/><circle cx="567" cy="303" r="6"/><circle cx="597" cy="327" r="4"/></g>
+        </svg>
+        <span class="spark spark--one">✦</span><span class="spark spark--two">✦</span><span class="spark spark--three">•</span>
+      </div>
+    </section>
+
+    <section class="method" id="phuong-phap">
+      <div class="section-heading reveal">
+        <span class="kicker">Đơn giản để bắt đầu</span>
+        <h2>Ba bước tạo nên<br><em>một nhịp sống mới.</em></h2>
+      </div>
+      <div class="method-grid" id="loi-ich">
+        <article class="method-card reveal"><span class="method-card__number">01</span><div class="method-icon">◎</div><h3>Chọn điều ý nghĩa</h3><p>Bắt đầu với một thói quen nhỏ thực sự quan trọng với bạn.</p></article>
+        <article class="method-card method-card--featured reveal"><span class="method-card__number">02</span><div class="method-icon">↗</div><h3>Theo dõi nhẹ nhàng</h3><p>Ghi nhận mỗi lần hoàn thành và nhìn thấy nhịp tiến bộ của mình.</p></article>
+        <article class="method-card reveal"><span class="method-card__number">03</span><div class="method-icon">✦</div><h3>Giữ đà mỗi ngày</h3><p>Những lời nhắc tinh tế giúp bạn duy trì mà không thấy áp lực.</p></article>
+      </div>
+    </section>
+
+    <section class="journey" id="hanh-trinh">
+      <div><span class="kicker kicker--light">Bắt đầu ngay hôm nay</span><h2>Một năm sau, bạn sẽ ước<br>mình đã bắt đầu từ <em>hôm nay.</em></h2></div>
+      <a class="button button--cream" href="/register">Tạo tài khoản miễn phí <span>→</span></a>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</div>

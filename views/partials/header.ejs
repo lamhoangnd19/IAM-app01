@@ -1,0 +1,42 @@
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Momentum - Trang chủ">
+    <span class="brand__mark" aria-hidden="true">
+      <svg viewBox="0 0 28 28" fill="none"><path d="M7 18.2c3.8-.2 5.3-2.4 6.7-7.9.5 4.8 2 7.2 7.3 7.9-5.1.6-6.6 2.7-7.3 7.3-.8-4.6-2.4-6.7-6.7-7.3Z" fill="currentColor"/><circle cx="8" cy="7" r="3" fill="currentColor" opacity=".55"/></svg>
+    </span>
+    <span>momentum</span>
+  </a>
+
+  <nav class="main-nav" aria-label="Điều hướng chính">
+    <a href="/#phuong-phap">Phương pháp</a>
+    <a href="/#loi-ich">Lợi ích</a>
+    <a href="/#hanh-trinh">Hành trình</a>
+  </nav>
+
+  <div class="header-actions">
+    <% if (user) { %>
+      <a class="button button--soft button--small" href="/dashboard">Bảng điều khiển</a>
+      <form method="post" action="/logout">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <button class="text-button" type="submit">Đăng xuất</button>
+      </form>
+    <% } else { %>
+      <a class="login-link" href="/login">Đăng nhập</a>
+      <a class="button button--dark button--small" href="/register">Bắt đầu ngay <span>↗</span></a>
+    <% } %>
+  </div>
+  <button class="menu-button" type="button" aria-label="Mở menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" aria-hidden="true">
+  <a href="/#phuong-phap">Phương pháp</a>
+  <a href="/#loi-ich">Lợi ích</a>
+  <a href="/#hanh-trinh">Hành trình</a>
+  <% if (user) { %>
+    <a href="/dashboard">Bảng điều khiển</a>
+  <% } else { %>
+    <a href="/login">Đăng nhập</a>
+    <a href="/register">Tạo tài khoản</a>
+  <% } %>
+</div>

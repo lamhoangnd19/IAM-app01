@@ -1,0 +1,35 @@
+<%- include('partials/head') %>
+<div class="shell dashboard-shell">
+  <%- include('partials/header') %>
+  <main class="dashboard">
+    <% if (flash) { %><div class="toast toast--<%= flash.type %>"><span>✓</span><%= flash.message %></div><% } %>
+    <section class="dashboard-hero reveal">
+      <div><span class="eyebrow"><span></span> <%= displayDate %></span><h1>Chào <em><%= user.Username %></em>,<br>hôm nay mình tiến thêm một chút nhé.</h1></div>
+      <div class="day-score"><span>Hôm nay</span><strong>2<small>/3</small></strong><div class="score-ring"><svg viewBox="0 0 42 42"><circle cx="21" cy="21" r="16"/><circle class="score-progress" cx="21" cy="21" r="16"/></svg></div></div>
+    </section>
+    <section class="dashboard-grid">
+      <div class="habit-panel reveal">
+        <div class="panel-title"><div><span class="kicker">Nhịp hôm nay</span><h2>Thói quen của bạn</h2></div><button class="round-button" type="button" aria-label="Thêm thói quen">+</button></div>
+        <div class="habit-list">
+          <% habits.forEach((habit) => { %>
+            <article class="habit <%= habit.done ? 'habit--done' : '' %>">
+              <button class="habit-check" type="button" aria-label="Đánh dấu hoàn thành"><%= habit.done ? '✓' : '' %></button>
+              <div class="habit-icon habit-icon--<%= habit.icon %>"><%= habit.icon === 'water' ? '◒' : habit.icon === 'book' ? '▤' : '⌁' %></div>
+              <div class="habit-copy"><strong><%= habit.name %></strong><span><%= habit.detail %></span></div>
+              <div class="habit-progress"><i style="width:<%= habit.progress %>%"></i></div>
+              <span class="habit-percent"><%= habit.progress %>%</span>
+            </article>
+          <% }) %>
+        </div>
+      </div>
+      <aside class="insight-panel reveal reveal--delay">
+        <div class="insight-top"><span class="sun-mini">☀</span><span>Gợi ý hôm nay</span></div>
+        <blockquote>“Bạn không cần hoàn hảo.<br>Bạn chỉ cần <em>tiếp tục.</em>”</blockquote>
+        <p>Hoàn thành thêm 1 thói quen để giữ chuỗi 12 ngày của bạn.</p>
+        <div class="week-row"><span>T2<i class="done">✓</i></span><span>T3<i class="done">✓</i></span><span>T4<i class="done">✓</i></span><span>T5<i class="done">✓</i></span><span>T6<i class="done">✓</i></span><span>T7<i class="today">2</i></span><span>CN<i></i></span></div>
+      </aside>
+    </section>
+    <section class="stats-row reveal"><div><strong>12</strong><span>ngày liên tiếp</span></div><div><strong>86%</strong><span>tỷ lệ hoàn thành</span></div><div><strong>34</strong><span>lần giữ lời với mình</span></div><p>“Mỗi dấu tích là một lá phiếu cho con người bạn muốn trở thành.”</p></section>
+  </main>
+  <%- include('partials/footer') %>
+</div>

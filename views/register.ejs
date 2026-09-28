@@ -1,0 +1,31 @@
+<%- include('partials/head') %>
+<div class="shell shell--auth">
+  <%- include('partials/header') %>
+  <main class="auth-page">
+    <section class="auth-intro auth-intro--register">
+      <a class="back-link" href="/">← Trở về trang chủ</a>
+      <div class="auth-intro__content reveal">
+        <span class="kicker">Một khởi đầu mới</span>
+        <h1>Gieo một<br><em>thói quen tốt.</em></h1>
+        <p>Không cần thay đổi tất cả trong một ngày. Chỉ cần bắt đầu với điều nhỏ nhất.</p>
+        <ul class="benefit-list"><li><i>✓</i> Theo dõi tiến bộ trực quan</li><li><i>✓</i> Xây dựng chuỗi ngày bền vững</li><li><i>✓</i> Hoàn toàn miễn phí để bắt đầu</li></ul>
+      </div>
+      <div class="auth-shape auth-shape--one"></div><div class="auth-shape auth-shape--two"></div>
+    </section>
+    <section class="auth-form-wrap">
+      <form class="auth-form reveal reveal--delay" method="post" action="/register" novalidate>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div class="form-heading"><span class="form-icon">✦</span><h2>Tạo tài khoản</h2><p>Chỉ mất chưa đầy một phút.</p></div>
+        <% if (error) { %><div class="alert alert--error" role="alert"><span>!</span><%= error %></div><% } %>
+        <label class="field"><span>Tên đăng nhập</span><div class="input-wrap"><span class="input-icon">@</span><input type="text" name="username" value="<%= form.username || '' %>" placeholder="3–30 ký tự" pattern="[a-z0-9_.]{3,30}" autocomplete="username" required autofocus></div><small>Chỉ dùng chữ thường, số, dấu chấm và gạch dưới.</small></label>
+        <label class="field"><span>Mật khẩu</span><div class="input-wrap"><span class="input-icon">⌑</span><input id="password" type="password" name="password" placeholder="Tối thiểu 8 ký tự" minlength="8" maxlength="72" autocomplete="new-password" required><button class="password-toggle" type="button" data-target="password" aria-label="Hiện mật khẩu">◉</button></div></label>
+        <label class="field"><span>Xác nhận mật khẩu</span><div class="input-wrap"><span class="input-icon">⌑</span><input id="confirmPassword" type="password" name="confirmPassword" placeholder="Nhập lại mật khẩu" autocomplete="new-password" required><button class="password-toggle" type="button" data-target="confirmPassword" aria-label="Hiện mật khẩu">◉</button></div></label>
+        <button class="button button--coral button--full" type="submit">Tạo tài khoản <span>→</span></button>
+        <p class="terms">Bằng cách tiếp tục, bạn đồng ý với Điều khoản sử dụng và Chính sách bảo mật.</p>
+        <p class="auth-switch">Đã có tài khoản? <a href="/login">Đăng nhập</a></p>
+      </form>
+    </section>
+  </main>
+</div>
+<script src="/js/main.js" defer></script>
+</body></html>
